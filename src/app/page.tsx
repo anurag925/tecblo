@@ -23,7 +23,6 @@ export default function Home() {
         </h1>
         <p className="text-xl text-slate-600 max-w-2xl mx-auto">
           Discover the latest in technology, programming tutorials, and technical insights.
-          Built with Next.js 15, featuring Markdown support and Mermaid diagrams.
         </p>
       </div>
 
