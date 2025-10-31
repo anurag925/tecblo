@@ -54,3 +54,116 @@
 .prose strong {
   @apply font-semibold text-slate-900;
 }
+
+/* Code Block Styling */
+.prose pre {
+  background: #0d1117 !important;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  overflow-x: auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.prose pre code {
+  background: transparent !important;
+  color: #e6edf3 !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', monospace !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Inline Code Styling */
+.prose code:not(pre code) {
+  background: #e0e7ff !important;
+  color: #3730a3 !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.9em !important;
+}
+
+/* Language Label for Code Blocks */
+.prose pre::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: rgba(110, 118, 129, 0.4);
+  color: #8b949e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Styling */
+.prose table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.prose th {
+  background: #f8fafc;
+  color: #374151;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.prose tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.prose tr:hover {
+  background: #f3f4f6;
+}
+
+/* Blockquote Styling */
+.prose blockquote {
+  border-left: 4px solid #6366f1;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #475569;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+/* List Styling */
+.prose ol,
+.prose ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+}
+
+.prose li > p {
+  margin: 0.5rem 0;
+}
