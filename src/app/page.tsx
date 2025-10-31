@@ -19,7 +19,7 @@ export default function Home() {
     <div className="space-y-8">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">
-          Welcome to TecBlo
+          Welcome to BlockBlog
         </h1>
         <p className="text-xl text-slate-600 max-w-2xl mx-auto">
           Discover the latest in technology, programming tutorials, and technical insights.

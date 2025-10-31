@@ -3,8 +3,8 @@ import Link from 'next/link'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'TecBlo - Technical Blog',
-  description: 'A technical blog built with Next.js 15, featuring Markdown support, Mermaid diagrams, and more',
+  title: 'BlockBlog - Technical Blog',
+  description: 'A technical blog',
 }
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
             <div className="max-w-4xl mx-auto px-4 py-6">
               <h1 className="text-3xl font-bold text-slate-900">
                 <Link href="/" className="hover:text-indigo-600 transition-colors">
-                  TecBlo
+                  BlockBlog
                 </Link>
               </h1>
               <p className="text-slate-600 mt-1">Technical insights and tutorials</p>
@@ -31,7 +31,7 @@ export default function RootLayout({
           </main>
           <footer className="bg-white border-t mt-16">
             <div className="max-w-4xl mx-auto px-4 py-8 text-center text-slate-600">
-              <p>&copy; 2024 TecBlo. Built with Next.js 15 and ❤️</p>
+              <p>&copy; 2024 BlockBlog. Built with ❤️</p>
             </div>
           </footer>
         </div>
