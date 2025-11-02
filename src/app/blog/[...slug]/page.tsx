@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { getBlogPost, getBlogPosts } from '@/lib/blog'
 import { processMarkdown } from '@/lib/markdown'
 import MermaidInitializer from '@/components/MermaidInitializer'
-import { ArrowLeft } from 'lucide-react'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -33,7 +32,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="max-w-3xl mx-auto">
       <div className="mb-8">
         <Link href="/blog" className="flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
-          <ArrowLeft size={18} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M19 12H5" />
+            <path d="m12 19-7-7 7-7" />
+          </svg>
           <span>Back to blog</span>
         </Link>
       </div>

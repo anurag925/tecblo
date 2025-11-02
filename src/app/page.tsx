@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { getBlogPosts } from '@/lib/blog'
-import { ArrowRight } from 'lucide-react'
 
 export default function Home() {
   const allPosts = getBlogPosts()
@@ -28,7 +27,20 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-slate-900">Recent Posts</h2>
             <Link href="/blog" className="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 transition-colors">
               <span>View all</span>
-              <ArrowRight size={18} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -58,7 +70,22 @@ export default function Home() {
                       })}
                     </time>
                     <span className="flex items-center gap-1 group-hover:text-indigo-600">
-                      Read more <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                      Read more{' '}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="transition-transform group-hover:translate-x-1"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                      </svg>
                     </span>
                   </div>
                 </div>
