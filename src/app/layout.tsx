@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import './globals.css'
 import { Inter, JetBrains_Mono } from 'next/font/google'
+import Logo from '@/components/Logo'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,6 +17,9 @@ const jetbrains_mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'BlockBlog - A Modern Tech Blog',
   description: 'In-depth articles on web development, system design, and more.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({
@@ -30,11 +34,12 @@ export default function RootLayout({
           <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-20">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
-                <div className="flex items-center">
-                  <Link href="/" className="text-2xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
+                <Link href="/" className="flex items-center gap-2">
+                  <Logo />
+                  <span className="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
                     BlockBlog
-                  </Link>
-                </div>
+                  </span>
+                </Link>
                 <nav className="hidden md:flex md:space-x-8">
                   <Link href="/" className="font-medium text-slate-600 hover:text-slate-900 transition-colors">
                     Home
@@ -51,7 +56,9 @@ export default function RootLayout({
           </main>
           <footer className="bg-white border-t border-slate-200">
             <div className="max-w-5xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-slate-500">
-              <p>&copy; {new Date().getFullYear()} BlockBlog. All rights reserved.</p>
+              <div className="flex items-center justify-center gap-2">
+                <p>&copy; {new Date().getFullYear()} BlockBlog. All rights reserved.</p>
+              </div>
             </div>
           </footer>
         </div>
