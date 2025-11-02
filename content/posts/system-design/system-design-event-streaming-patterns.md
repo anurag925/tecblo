@@ -59,19 +59,30 @@ For example, a `ProductSearchService` could listen to `ProductCreated` and `Prod
 ```mermaid
 graph TD
     subgraph "Write Side"
-        Cmd[Command: UpdateAddress] --> WriteModel{Write Model};
-        WriteModel -- "Produces" --> Event[Event: AddressChanged];
-        Event -- "Appends to" --> Log[Event Log];
+        Cmd[Command: UpdateAddress]
+        WriteModel{Write Model}
+        Event[Event: AddressChanged]
+        Log[Event Log]
+        
+        Cmd --> WriteModel
+        WriteModel -->|Produces| Event
+        Event -->|Appends to| Log
     end
 
     subgraph "Read Side"
-        Log -- "Streams to" --> ReadModel1[Read Model 1<br>(User Profile View)];
-        Log -- "Streams to" --> ReadModel2[Read Model 2<br>(Search Index)];
+        ReadModel1[Read Model 1<br/>User Profile View]
+        ReadModel2[Read Model 2<br/>Search Index]
+        
+        Log -->|Streams to| ReadModel1
+        Log -->|Streams to| ReadModel2
     end
 
     subgraph "Queries"
-        Q1[Query: GetUser] --> ReadModel1;
-        Q2[Query: SearchProducts] --> ReadModel2;
+        Q1[Query: GetUser]
+        Q2[Query: SearchProducts]
+        
+        Q1 --> ReadModel1
+        Q2 --> ReadModel2
     end
 ```
 
@@ -104,18 +115,27 @@ This effectively creates a stream of every state change in your database, which 
 ```mermaid
 graph TD
     subgraph "Monolithic Application"
-        App[Legacy App] --> DB[(Database)];
+        App[Legacy App]
+        DB[(Database)]
+        App --> DB
     end
 
     subgraph "CDC Process"
-        DB -- "Transaction Log" --> CDC[CDC Connector<br>(e.g., Debezium)];
-        CDC -- "Publishes Events" --> Kafka[Kafka Topic];
+        CDC[CDC Connector<br/>e.g. Debezium]
+        Kafka[Kafka Topic]
+        
+        DB -->|Transaction Log| CDC
+        CDC -->|Publishes Events| Kafka
     end
 
     subgraph "Downstream Consumers"
-        Kafka --> Service1[Search Service];
-        Kafka --> Service2[Analytics];
-        Kafka --> Service3[Cache Invalidator];
+        Service1[Search Service]
+        Service2[Analytics]
+        Service3[Cache Invalidator]
+        
+        Kafka --> Service1
+        Kafka --> Service2
+        Kafka --> Service3
     end
 ```
 

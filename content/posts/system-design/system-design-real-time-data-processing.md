@@ -31,19 +31,22 @@ graph TD
     end
 
     subgraph "Lambda Architecture"
-        BatchLayer[Batch Layer<br>(Master Dataset)]
-        SpeedLayer[Speed Layer<br>(Real-Time Processing)]
+        BatchLayer[Batch Layer<br/>Master Dataset]
+        SpeedLayer[Speed Layer<br/>Real-Time Processing]
+        ServingLayer[Serving Layer<br/>Merges Views]
         
-        Stream --> BatchLayer;
-        Stream --> SpeedLayer;
-
-        BatchLayer -- "Batch Views" --> ServingLayer;
-        SpeedLayer -- "Real-Time Views" --> ServingLayer;
+        Stream --> BatchLayer
+        Stream --> SpeedLayer
+        
+        BatchLayer -->|Batch Views| ServingLayer
+        SpeedLayer -->|Real-Time Views| ServingLayer
     end
 
     subgraph "Queries"
-        Query[Query] --> ServingLayer[Serving Layer<br>(Merges Views)];
-        ServingLayer --> Result[Result];
+        Query[Query]
+        Result[Result]
+        Query --> ServingLayer
+        ServingLayer --> Result
     end
 ```
 
@@ -81,16 +84,18 @@ graph TD
     end
 
     subgraph "Kappa Architecture"
-        Log[Canonical Event Log<br>(e.g., Kafka)]
-        StreamProcessor[Stream Processing Engine<br>(e.g., Flink)]
+        Log[Canonical Event Log<br/>e.g. Kafka]
+        StreamProcessor[Stream Processing Engine<br/>e.g. Flink]
+        ServingViews[Serving Views]
         
-        Stream --> Log;
-        Log -- "Reads from log" --> StreamProcessor;
-        StreamProcessor -- "Creates/Updates" --> ServingViews[Serving Views];
+        Stream --> Log
+        Log -->|Reads from log| StreamProcessor
+        StreamProcessor -->|Creates/Updates| ServingViews
     end
 
     subgraph "Queries"
-        Query[Query] --> ServingViews;
+        Query[Query]
+        Query --> ServingViews
     end
 ```
 
