@@ -1,134 +1,86 @@
 import Link from 'next/link'
-import { getBlogPosts, getBlogGroups } from '@/lib/blog'
+import { getBlogPosts } from '@/lib/blog'
+import { ArrowRight } from 'lucide-react'
 
 export default function Home() {
-  const posts = getBlogPosts()
-  const groups = getBlogGroups()
-  
-  // Group posts by their folder
-  const groupedPosts = posts.reduce((acc, post) => {
-    const key = post.group || 'uncategorized'
-    if (!acc[key]) {
-      acc[key] = []
-    }
-    acc[key].push(post)
-    return acc
-  }, {} as Record<string, typeof posts>)
+  const allPosts = getBlogPosts()
+  const recentPosts = allPosts.slice(0, 3)
 
   return (
-    <div className="space-y-8">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">
-          Welcome to BlockBlog
+    <div className="space-y-16">
+      <section className="text-center py-16">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-4 tracking-tight">
+          Build, Learn, Share.
         </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-          Discover the latest in technology, programming tutorials, and technical insights.
+        <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+          A curated collection of technical articles, tutorials, and insights on modern web development and system design.
         </p>
-      </div>
-
-      {posts.length > 0 ? (
-        <div className="space-y-12">
-          {/* Show groups if they exist */}
-          {groups.length > 0 && (
-            <div className="flex flex-wrap gap-2 justify-center">
-              <span className="text-slate-600 font-medium">Blog Groups:</span>
-              {groups.map((group) => (
-                <a
-                  key={group}
-                  href={`#${group}`}
-                  className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-sm font-medium uppercase tracking-wide transition-colors"
-                >
-                  {group} ({groupedPosts[group]?.length || 0})
-                </a>
-              ))}
-              {groupedPosts['uncategorized'] && (
-                <a
-                  href="#uncategorized"
-                  className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-sm font-medium uppercase tracking-wide transition-colors"
-                >
-                  Uncategorized ({groupedPosts['uncategorized'].length})
-                </a>
-              )}
-            </div>
-          )}
-
-          {/* Display posts grouped by folder */}
-          {Object.entries(groupedPosts)
-            .sort(([a], [b]) => a.localeCompare(b))
-            .map(([groupName, groupPosts]) => (
-              <section key={groupName} id={groupName} className="space-y-6">
-                <h2 className="text-3xl font-bold text-slate-900 border-b-2 border-indigo-500 pb-2 capitalize">
-                  {groupName}
-                </h2>
-                <div className="grid gap-6 md:gap-8">
-                  {groupPosts.map((post) => (
-                    <article
-                      key={post.slug.join('/')}
-                      className="bg-white rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow"
-                    >
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-semibold text-slate-900 mb-2">
-                            <Link
-                              href={`/blog/${post.slug.join('/')}`}
-                              className="hover:text-indigo-600 transition-colors"
-                            >
-                              {post.title}
-                            </Link>
-                          </h3>
-                          <p className="text-slate-600 mb-4 leading-relaxed">
-                            {post.description}
-                          </p>
-                          <div className="flex items-center gap-4 text-sm text-slate-500">
-                            <time dateTime={post.date}>
-                              {new Date(post.date).toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                              })}
-                            </time>
-                            {post.tags && post.tags.length > 0 && (
-                              <div className="flex gap-2">
-                                {post.tags.map((tag) => (
-                                  <span
-                                    key={tag}
-                                    className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium"
-                                  >
-                                    {tag}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            ))}
+        <div className="mt-8 flex justify-center gap-4">
+          <Link href="/blog" className="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-all">
+              Explore All Posts
+          </Link>
         </div>
-      ) : (
-        <div className="text-center py-12">
-          <div className="bg-white rounded-lg shadow-sm border p-8">
-            <h3 className="text-xl font-semibold text-slate-900 mb-2">
+      </section>
+
+      {recentPosts.length > 0 && (
+        <section>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-slate-900">Recent Posts</h2>
+            <Link href="/blog" className="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+              <span>View all</span>
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {recentPosts.map((post) => (
+              <article
+                key={post.slug.join('/')}
+                className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group"
+              >
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    <Link
+                      href={`/blog/${post.slug.join('/')}`}
+                      className="group-hover:text-indigo-600 transition-colors"
+                    >
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-slate-600 mb-4 line-clamp-3">
+                    {post.description}
+                  </p>
+                  <div className="flex items-center justify-between text-sm text-slate-500">
+                    <time dateTime={post.date}>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </time>
+                    <span className="flex items-center gap-1 group-hover:text-indigo-600">
+                      Read more <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {allPosts.length === 0 && (
+        <div className="text-center py-16">
+          <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-12">
+            <h3 className="text-2xl font-semibold text-slate-900 mb-2">
               No blog posts yet
             </h3>
-            <p className="text-slate-600 mb-4">
-              Create your first blog post by adding a Markdown file to the{' '}
-              <code className="px-2 py-1 bg-indigo-100 text-indigo-800 rounded text-sm font-mono">
+            <p className="text-slate-600 mb-6 max-w-md mx-auto">
+              It looks like there are no articles here. Add a Markdown file to the{' '}
+              <code className="font-mono bg-slate-100 text-slate-800 rounded-md px-2 py-1">
                 content/posts
               </code>{' '}
-              directory.
+              directory to get started.
             </p>
-            <div className="bg-slate-50 rounded-lg p-4 text-left space-y-2">
-              <p className="text-sm text-slate-600 font-mono">
-                content/posts/my-first-post.md
-              </p>
-              <p className="text-sm text-slate-600 font-mono">
-                content/posts/tutorials/getting-started.md
-              </p>
-            </div>
           </div>
         </div>
       )}

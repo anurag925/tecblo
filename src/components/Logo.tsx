@@ -1,0 +1,19 @@
+export default function Logo() {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="text-indigo-600"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H4C1.79086 32 0 30.2091 0 28V4ZM10 8H18C20.2091 8 22 9.79086 22 12V13C22 15.2091 20.2091 17 18 17H10V8ZM10 19H20C22.2091 19 24 20.7909 24 23V24C24 26.2091 22.2091 28 20 28H10V19Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}

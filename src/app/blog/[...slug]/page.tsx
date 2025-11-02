@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { getBlogPost, getBlogPosts } from '@/lib/blog'
 import { processMarkdown } from '@/lib/markdown'
 import MermaidInitializer from '@/components/MermaidInitializer'
+import { ArrowLeft } from 'lucide-react'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -28,51 +30,59 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const processedContent = await processMarkdown(post.content)
 
   return (
-    <article className="max-w-none">
-      <header className="mb-8 pb-8 border-b">
-        {post.group && (
-          <div className="mb-4">
-            <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium uppercase tracking-wide">
-              {post.group}
-            </span>
-          </div>
-        )}
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">
-          {post.title}
-        </h1>
-        <div className="flex items-center gap-4 text-slate-600">
-          <time dateTime={post.date}>
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
-          </time>
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
+    <div className="max-w-3xl mx-auto">
+      <div className="mb-8">
+        <Link href="/blog" className="flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+          <ArrowLeft size={18} />
+          <span>Back to blog</span>
+        </Link>
+      </div>
+      <article>
+        <header className="mb-10 pb-8 border-b border-slate-200">
+          {post.group && (
+            <div className="mb-4">
+              <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-md text-sm font-semibold uppercase tracking-wider">
+                {post.group}
+              </span>
             </div>
           )}
-        </div>
-        {post.description && (
-          <p className="text-xl text-slate-600 mt-4 leading-relaxed">
-            {post.description}
-          </p>
-        )}
-      </header>
-      
-      <div 
-        className="prose prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ __html: processedContent }}
-      />
-      <MermaidInitializer />
-    </article>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+            {post.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-600">
+            <time dateTime={post.date}>
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+          {post.description && (
+            <p className="text-xl text-slate-600 mt-6">
+              {post.description}
+            </p>
+          )}
+        </header>
+        
+        <div 
+          className="prose prose-lg max-w-none"
+          dangerouslySetInnerHTML={{ __html: processedContent }}
+        />
+        <MermaidInitializer />
+      </article>
+    </div>
   )
 }

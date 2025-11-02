@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -8,42 +9,57 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // 1. Adds your custom font families
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+        mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
       },
-
-      // 2. This is the official way to configure the .prose styles
-      // This configuration mirrors the custom CSS you have in your <style> tag.
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
-            '--tw-prose-body': theme('colors.slate[800]'),
+            '--tw-prose-body': theme('colors.slate[700]'),
             '--tw-prose-headings': theme('colors.slate[900]'),
+            '--tw-prose-lead': theme('colors.slate[600]'),
             '--tw-prose-links': theme('colors.indigo[600]'),
-            '--tw-prose-quotes': theme('colors.gray[700]'),
-            '--tw-prose-quote-borders': theme('colors.indigo[200]'),
+            '--tw-prose-bold': theme('colors.slate[900]'),
+            '--tw-prose-counters': theme('colors.slate[500]'),
+            '--tw-prose-bullets': theme('colors.slate[300]'),
+            '--tw-prose-hr': theme('colors.slate[200]'),
+            '--tw-prose-quotes': theme('colors.slate[900]'),
+            '--tw-prose-quote-borders': theme('colors.indigo[300]'),
+            '--tw-prose-captions': theme('colors.slate[500]'),
+            '--tw-prose-code': theme('colors.indigo[600]'),
+            '--tw-prose-pre-code': theme('colors.slate[200]'),
+            '--tw-prose-pre-bg': theme('colors.slate[800]'),
+            '--tw-prose-th-borders': theme('colors.slate[300]'),
+            '--tw-prose-td-borders': theme('colors.slate[200]'),
             
-            // --- Inline Code ---
-            // This targets inline code that is *not* in a <pre> block
-            // It applies your custom indigo-100/indigo-800 styling.
-            'code:not(pre > code)': {
-              backgroundColor: theme('colors.indigo[100]'),
-              color: theme('colors.indigo[800]'),
-              padding: '0.2em 0.4em',
-              borderRadius: '6px',
+            'code::before': { content: '""' },
+            'code::after': { content: '""' },
+            code: {
               fontWeight: '500',
+              backgroundColor: theme('colors.slate.100'),
+              padding: theme('spacing.1'),
+              borderRadius: theme('borderRadius.md'),
             },
-
-            // --- Code Blocks ---
-            // This setup assumes you are still loading 'github-dark.min.css'
-            // for syntax highlighting, so we just style the <pre> container.
-            '--tw-prose-pre-code': 'inherit', // Let the highlighter style the text
-            '--tw-prose-pre-bg': '#0d1117', // Match github-dark bg
-            'pre': {
-               borderRadius: '12px',
-               padding: '1.25em',
+            pre: {
+              backgroundColor: theme('colors.slate.800'),
+              color: theme('colors.slate.200'),
+              borderRadius: theme('borderRadius.lg'),
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              padding: 0,
+              color: 'inherit',
+            },
+            a: {
+              textDecoration: 'none',
+              transition: 'color 0.2s ease-in-out',
+              '&:hover': {
+                color: theme('colors.indigo.700'),
+              },
+            },
+            blockquote: {
+              fontStyle: 'normal',
             },
           },
         },
@@ -51,7 +67,7 @@ module.exports = {
     },
   },
   plugins: [
-    // 3. This plugin provides all the base .prose styles
     require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

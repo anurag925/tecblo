@@ -1,4 +1,4 @@
-# TecBlo - Technical Blog
+# BlockBlog - Technical Blog
 
 A modern technical blog website built with Next.js 15, featuring Markdown support, Mermaid diagrams, and a beautiful responsive design.
 
@@ -35,7 +35,7 @@ A modern technical blog website built with Next.js 15, featuring Markdown suppor
 1. Clone the repository:
    ```bash
    git clone <your-repo-url>
-   cd tecblo
+   cd BlockBlog
    ```
 
 2. Install dependencies:
@@ -116,7 +116,7 @@ The project uses a custom Tailwind configuration with:
 ## 📁 Project Structure
 
 ```
-tecblo/
+BlockBlog/
 ├── content/
 │   └── posts/           # Blog post Markdown files
 ├── src/
