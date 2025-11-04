@@ -225,10 +225,10 @@
 - [x] Edge Computing
 
 ### Batch 36: Storage Systems (4 posts)
-- [ ] Object Storage Design
-- [ ] Blob Storage Patterns
-- [ ] Block Storage vs File Storage
-- [ ] Distributed File Systems
+- [x] Object Storage Design
+- [x] Blob Storage Patterns
+- [x] Block Storage vs File Storage
+- [x] Distributed File Systems
 
 ### Batch 37: Data Consistency (4 posts)
 - [ ] Eventual Consistency Patterns
