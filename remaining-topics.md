@@ -1,9 +1,9 @@
 # Remaining System Design Blog Topics
 
 ## Progress Summary
-- **Completed:** 102 posts
-- **Remaining:** 136+ posts
-- **Last Batch:** Batch 25 - Load Distribution (4 posts completed)
+- **Completed:** 118 posts
+- **Remaining:** 124+ posts
+- **Last Batch:** Batch 29 - Performance Optimization (4 posts completed)
 
 ---
 
@@ -165,28 +165,28 @@
 - [x] Traffic Shaping Patterns
 
 ### Batch 26: Failover & Recovery (4 posts)
-- [ ] Automatic Failover Strategies
-- [ ] Health Check Patterns
-- [ ] Graceful Degradation
-- [ ] Disaster Recovery Planning
+- [x] Automatic Failover Strategies
+- [x] Health Check Patterns
+- [x] Graceful Degradation
+- [x] Disaster Recovery Planning
 
 ### Batch 27: Data Migration (4 posts)
-- [ ] Zero-Downtime Migrations
-- [ ] Dual-Write Pattern
-- [ ] Change Data Capture (CDC)
-- [ ] Schema Evolution Strategies
+- [x] Zero-Downtime Migrations
+- [x] Dual-Write Pattern
+- [x] Strangler Fig Pattern
+- [x] Data Reconciliation
 
 ### Batch 28: Monitoring & Observability (4 posts)
-- [ ] Metrics Collection Patterns
-- [ ] Distributed Tracing
-- [ ] Log Aggregation Systems
-- [ ] Alerting Strategies
+- [x] Metrics Collection Patterns
+- [x] Distributed Tracing
+- [x] Log Aggregation Systems
+- [x] Alerting Strategies
 
 ### Batch 29: Performance Optimization (4 posts)
-- [ ] Database Query Optimization
-- [ ] N+1 Query Problem Solutions
-- [ ] Connection Pool Sizing
-- [ ] Memory Management Patterns
+- [x] Database Query Optimization
+- [x] N+1 Query Problem Solutions
+- [x] Connection Pool Sizing
+- [x] Memory Management Patterns
 
 ### Batch 30: Concurrency Patterns (4 posts)
 - [ ] Thread Pool Design
