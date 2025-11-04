@@ -1,9 +1,9 @@
 # Remaining System Design Blog Topics
 
 ## Progress Summary
-- **Completed:** 34 posts
+- **Completed:** 102 posts
 - **Remaining:** 136+ posts
-- **Last Batch:** Batch 8 - Caching Strategies (4 posts completed)
+- **Last Batch:** Batch 25 - Load Distribution (4 posts completed)
 
 ---
 
@@ -141,28 +141,28 @@
 - [x] Batch API Operations
 
 ### Batch 22: Authentication & Security (4 posts)
-- [ ] OAuth 2.0 Flow Deep Dive
-- [ ] JWT Token Management
-- [ ] API Key Management
-- [ ] Multi-Factor Authentication
+- [x] OAuth 2.0 Flow Deep Dive
+- [x] JWT Token Management
+- [x] API Key Management
+- [x] Multi-Factor Authentication
 
 ### Batch 23: Authorization Patterns (4 posts)
-- [ ] Role-Based Access Control (RBAC)
-- [ ] Attribute-Based Access Control (ABAC)
-- [ ] Policy-Based Authorization
-- [ ] Permission Inheritance
+- [x] Role-Based Access Control (RBAC)
+- [x] Attribute-Based Access Control (ABAC)
+- [x] Policy-Based Authorization
+- [x] Permission Inheritance
 
 ### Batch 24: Network Protocols (4 posts)
-- [ ] HTTP/2 vs HTTP/3
-- [ ] WebSocket Protocol Deep Dive
-- [ ] Server-Sent Events (SSE)
-- [ ] Long Polling vs Streaming
+- [x] HTTP/2 vs HTTP/3
+- [x] WebSocket Protocol Deep Dive
+- [x] Server-Sent Events (SSE)
+- [x] Long Polling vs Streaming
 
 ### Batch 25: Load Distribution (4 posts)
-- [ ] DNS Load Balancing
-- [ ] Global Server Load Balancing
-- [ ] Anycast Routing
-- [ ] Traffic Shaping Patterns
+- [x] DNS Load Balancing
+- [x] Global Server Load Balancing
+- [x] Anycast Routing
+- [x] Traffic Shaping Patterns
 
 ### Batch 26: Failover & Recovery (4 posts)
 - [ ] Automatic Failover Strategies
