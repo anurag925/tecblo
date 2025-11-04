@@ -267,16 +267,34 @@
 - [x] Activity Streams
 
 ### Batch 43: Search Systems (4 posts)
-- [ ] Autocomplete Systems
-- [ ] Type-Ahead Search
-- [ ] Search Ranking Algorithms
-- [ ] Personalized Search
+- [x] Autocomplete Systems
+- [x] Type-Ahead Search
+- [x] Search Ranking Algorithms
+- [x] Personalized Search
 
 ### Batch 44: Recommendation Systems (4 posts)
-- [ ] Collaborative Filtering
-- [ ] Content-Based Filtering
-- [ ] Hybrid Recommendation Systems
-- [ ] Real-Time Recommendations
+- [x] Collaborative Filtering
+- [x] Content-Based Filtering
+- [x] Hybrid Recommendation Systems
+- [x] Real-Time Recommendations
+
+### Batch 45: Security & Cryptography (4 posts)
+- [x] Web Security Fundamentals
+- [x] Transport Layer Security (TLS)
+- [x] Cryptography in System Design
+- [x] Secure API Design
+
+### Batch 46: Advanced Load Balancing (4 posts)
+- [x] Maglev Load Balancer
+- [x] DNS Load Balancing
+- [x] Anycast for Load Balancing
+- [x] Consistent Hashing in Load Balancing
+
+### Batch 47: Containerization & Orchestration (4 posts)
+- [ ] Docker Fundamentals
+- [ ] Kubernetes Architecture
+- [ ] Service Mesh with Istio
+- [ ] Serverless vs Containers
 
 ---
 
