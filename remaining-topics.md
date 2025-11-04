@@ -231,40 +231,40 @@
 - [x] Distributed File Systems
 
 ### Batch 37: Data Consistency (4 posts)
-- [ ] Eventual Consistency Patterns
-- [ ] Strong Consistency Models
-- [ ] Causal Consistency
-- [ ] Session Consistency
+- [x] Eventual Consistency Patterns
+- [x] Strong Consistency Models
+- [x] Causal Consistency
+- [x] Session Consistency
 
 ### Batch 38: Batch Processing (4 posts)
-- [ ] MapReduce Pattern
-- [ ] Batch Job Scheduling
-- [ ] Data Pipeline Design
-- [ ] ETL Processes
+- [x] MapReduce Pattern
+- [x] Batch Job Scheduling
+- [x] Data Pipeline Design
+- [x] ETL Processes
 
 ### Batch 39: Real-Time Systems (4 posts)
-- [ ] Real-Time Messaging
-- [ ] Push Notification Systems
-- [ ] Presence Detection
-- [ ] Live Updates Architecture
+- [x] Real-Time Messaging
+- [x] Push Notification Systems
+- [x] Presence Detection
+- [x] Live Updates Architecture
 
 ### Batch 40: Video/Media (4 posts)
-- [ ] Video Streaming Architecture
-- [ ] Adaptive Bitrate Streaming
-- [ ] Live Streaming Systems
-- [ ] Media Transcoding Pipelines
+- [x] Video Streaming Architecture
+- [x] Adaptive Bitrate Streaming
+- [x] Live Streaming Systems
+- [x] Media Transcoding Pipelines
 
 ### Batch 41: E-Commerce Patterns (4 posts)
-- [ ] Shopping Cart Design
-- [ ] Inventory Management Systems
-- [ ] Order Processing Workflows
-- [ ] Payment Gateway Integration
+- [x] Shopping Cart Design
+- [x] Inventory Management Systems
+- [x] Order Processing Workflows
+- [x] Payment Gateway Integration
 
 ### Batch 42: Social Features (4 posts)
-- [ ] News Feed Architecture
-- [ ] Notification Systems
-- [ ] Friend Graph Design
-- [ ] Activity Streams
+- [x] News Feed Architecture
+- [x] Notification Systems
+- [x] Friend Graph Design
+- [x] Activity Streams
 
 ### Batch 43: Search Systems (4 posts)
 - [ ] Autocomplete Systems

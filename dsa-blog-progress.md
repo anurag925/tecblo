@@ -7,10 +7,10 @@ Create comprehensive blog posts for all DSA topics with code examples and diagra
 
 ### Phase 1: Fundamental Data Structures
 - [x] **Arrays & Two Pointers** - Two pointers patterns, sliding window, prefix sum
-- [ ] **Arrays Advanced** - Dutch flag, Kadane's algorithm, merge intervals, cycle detection
-- [ ] **String Fundamentals** - Two pointers in strings, sliding window, KMP algorithm
-- [ ] **String Advanced** - Rolling hash, trie, backtracking in strings
-- [ ] **Hash Maps & Sets** - Frequency counting, uniqueness detection, dictionary operations
+- [x] **Arrays Advanced** - Dutch flag, Kadane's algorithm, merge intervals, cycle detection
+- [x] **String Fundamentals** - Two pointers in strings, sliding window, KMP algorithm
+- [x] **String Advanced** - Rolling hash, trie, backtracking in strings
+- [x] **Hash Maps & Sets** - Frequency counting, uniqueness detection, dictionary operations
 
 ### Phase 2: Linear Data Structures
 - [ ] **Linked Lists** - Fast/slow pointers, reversal, merging, manipulation
