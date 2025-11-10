@@ -522,7 +522,7 @@ export default function SystemDesignRoadmapPage() {
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div className="relative w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="text-center">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-6">
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -567,7 +567,7 @@ export default function SystemDesignRoadmapPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-16 max-w-7xl mx-auto">
         {/* Learning Path */}
         <div className="space-y-16">
           {roadmapSections.map((section, sectionIndex) => (
