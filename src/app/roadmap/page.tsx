@@ -1,5 +1,39 @@
 import Link from 'next/link'
 import { getBlogPosts } from '@/lib/blog'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'System Design Learning Roadmap - Complete Study Path for Developers',
+  description: 'Master system design with our comprehensive learning roadmap. Structured path covering scalability, databases, caching, microservices, and advanced patterns for technical interviews.',
+  keywords: [
+    'system design roadmap',
+    'system design learning path',
+    'technical interview preparation',
+    'system design study guide',
+    'scalability learning',
+    'distributed systems roadmap',
+    'software architecture learning',
+    'system design curriculum',
+    'backend development roadmap',
+    'system design fundamentals'
+  ],
+  openGraph: {
+    title: 'System Design Learning Roadmap - Complete Study Path',
+    description: 'Master system design with our comprehensive learning roadmap covering all essential topics for developers and technical interviews.',
+    url: 'https://tecblo.dev/roadmap',
+    images: [
+      {
+        url: '/og-roadmap.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'System Design Learning Roadmap',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://tecblo.dev/roadmap',
+  },
+}
 
 interface Topic {
   name: string

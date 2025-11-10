@@ -1,5 +1,39 @@
 import Link from 'next/link'
 import { getBlogPosts } from '@/lib/blog'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'TecBlo - Master System Design & Algorithms | Technical Learning Hub',
+  description: 'Learn system design, algorithms, and software architecture through comprehensive tutorials, interactive roadmaps, and real-world examples. Open source technical blog for developers.',
+  keywords: [
+    'system design tutorial',
+    'algorithm learning',
+    'software architecture guide',
+    'technical interview prep',
+    'coding tutorials',
+    'system design roadmap',
+    'distributed systems',
+    'scalability patterns',
+    'database design',
+    'microservices architecture'
+  ],
+  openGraph: {
+    title: 'TecBlo - Master System Design & Algorithms',
+    description: 'Learn system design, algorithms, and software architecture through comprehensive tutorials and interactive roadmaps.',
+    url: 'https://tecblo.dev',
+    images: [
+      {
+        url: '/og-home.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'TecBlo Technical Learning Hub',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://tecblo.dev',
+  },
+}
 
 export default function Home() {
   const allPosts = getBlogPosts()
@@ -15,8 +49,47 @@ export default function Home() {
     return acc
   }, {} as Record<string, number>)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'TecBlo - Technical Learning Hub',
+    description: 'Master system design, algorithms, and modern software architecture with comprehensive tutorials, roadmaps, and real-world examples.',
+    url: 'https://tecblo.dev',
+    author: {
+      '@type': 'Organization',
+      name: 'TecBlo Team'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'TecBlo',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://tecblo.dev/logo.png'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://tecblo.dev'
+    },
+    blogPost: featuredPosts.slice(0, 3).map(post => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description,
+      url: `https://tecblo.dev/blog/${post.slug.join('/')}`,
+      datePublished: post.date,
+      author: {
+        '@type': 'Organization',
+        name: 'TecBlo Team'
+      }
+    }))
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>

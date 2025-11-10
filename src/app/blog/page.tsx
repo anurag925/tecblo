@@ -1,6 +1,40 @@
 import Link from 'next/link'
 import { getBlogPosts, getBlogGroups } from '@/lib/blog'
 import CollapsibleSection from '@/components/CollapsibleSection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'All Articles - System Design, Algorithms & Architecture Tutorials',
+  description: 'Browse our complete collection of technical articles covering system design patterns, algorithms, distributed systems, database design, and modern software architecture.',
+  keywords: [
+    'system design articles',
+    'algorithm tutorials',
+    'software architecture',
+    'distributed systems guide',
+    'database design patterns',
+    'scalability tutorials',
+    'microservices articles',
+    'technical blog posts',
+    'coding tutorials',
+    'system design examples'
+  ],
+  openGraph: {
+    title: 'Technical Articles - System Design & Algorithms',
+    description: 'Browse our complete collection of technical articles covering system design, algorithms, and modern software architecture.',
+    url: 'https://tecblo.dev/blog',
+    images: [
+      {
+        url: '/og-blog.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'TecBlo Technical Articles',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://tecblo.dev/blog',
+  },
+}
 
 export default function BlogIndexPage() {
   const posts = getBlogPosts()

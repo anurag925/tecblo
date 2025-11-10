@@ -15,11 +15,74 @@ const jetbrains_mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'BlockBlog - A Modern Tech Blog',
-  description: 'In-depth articles on web development, system design, and more.',
+  metadataBase: new URL('https://tecblo.dev'),
+  title: {
+    template: '%s | TecBlo - Technical Blog & Learning Hub',
+    default: 'TecBlo - Master System Design, DSA & Software Architecture',
+  },
+  description: 'Master system design, algorithms, and modern software architecture with comprehensive tutorials, roadmaps, and real-world examples. Open source technical blog for developers.',
+  keywords: [
+    'system design',
+    'algorithms', 
+    'software architecture',
+    'distributed systems',
+    'microservices',
+    'database design',
+    'scalability',
+    'performance optimization',
+    'coding tutorials',
+    'technical interviews',
+    'software engineering',
+    'web development',
+    'backend development',
+    'cloud architecture'
+  ],
+  authors: [{ name: 'TecBlo Team' }],
+  creator: 'TecBlo',
+  publisher: 'TecBlo',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://tecblo.dev',
+    siteName: 'TecBlo - Technical Learning Hub',
+    title: 'TecBlo - Master System Design & Algorithms',
+    description: 'Master system design, algorithms, and modern software architecture with comprehensive tutorials, roadmaps, and real-world examples.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'TecBlo - Technical Learning Hub',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TecBlo - Master System Design & Algorithms',
+    description: 'Master system design, algorithms, and modern software architecture with comprehensive tutorials and roadmaps.',
+    images: ['/og-image.jpg'],
+    creator: '@tecblo_dev',
+  },
+  alternates: {
+    canonical: 'https://tecblo.dev',
+  },
   icons: {
     icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
   },
+  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
@@ -27,8 +90,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'TecBlo - Technical Learning Hub',
+    description: 'Master system design, algorithms, and modern software architecture with comprehensive tutorials, roadmaps, and real-world examples.',
+    url: 'https://tecblo.dev',
+    publisher: {
+      '@type': 'Organization',
+      name: 'TecBlo',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://tecblo.dev/logo.png'
+      }
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://tecblo.dev/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    },
+    sameAs: [
+      'https://github.com/anurag925/tecblo'
+    ]
+  }
+
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains_mono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <meta name="google-site-verification" content="your-verification-code" />
+        <meta name="msvalidate.01" content="your-bing-verification-code" />
+      </head>
       <body className="font-sans antialiased bg-slate-50 text-slate-800">
         <div className="min-h-screen flex flex-col">
           <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-20">

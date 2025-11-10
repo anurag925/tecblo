@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getBlogPost, getBlogPosts } from '@/lib/blog'
 import { processMarkdown } from '@/lib/markdown'
 import MermaidInitializer from '@/components/MermaidInitializer'
+import { Metadata } from 'next'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -18,6 +19,66 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = getBlogPost(slug)
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found.',
+    }
+  }
+
+  const url = `https://tecblo.dev/blog/${post.slug.join('/')}`
+  const ogImage = `/og-posts/${post.slug.join('-')}.jpg`
+  
+  return {
+    title: `${post.title} | System Design & Architecture Tutorial`,
+    description: post.description || `Learn ${post.title.toLowerCase()} - comprehensive tutorial covering implementation, best practices, and real-world examples.`,
+    keywords: [
+      ...(post.tags || []),
+      'system design',
+      'tutorial',
+      'software architecture',
+      'best practices',
+      'implementation guide'
+    ],
+    authors: [{ name: 'TecBlo Team' }],
+    openGraph: {
+      title: post.title,
+      description: post.description || `Learn ${post.title.toLowerCase()} with comprehensive examples and best practices.`,
+      url: url,
+      siteName: 'TecBlo',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      section: post.group || 'Technology',
+      tags: post.tags || [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description || `Learn ${post.title.toLowerCase()} with comprehensive examples and best practices.`,
+      images: [ogImage],
+    },
+    alternates: {
+      canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  }
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
   const post = getBlogPost(slug)
@@ -28,8 +89,45 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const processedContent = await processMarkdown(post.content)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description || `Learn ${post.title.toLowerCase()} with comprehensive examples and best practices.`,
+    image: [`https://tecblo.dev/og-posts/${post.slug.join('-')}.jpg`],
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Organization',
+      name: 'TecBlo Team',
+      url: 'https://tecblo.dev'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'TecBlo',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://tecblo.dev/logo.png'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://tecblo.dev/blog/${post.slug.join('/')}`
+    },
+    keywords: post.tags?.join(', ') || 'system design, tutorial, software architecture',
+    articleSection: post.group || 'Technology',
+    wordCount: post.content.split(' ').length,
+    articleBody: post.content.substring(0, 500) + '...'
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <div className="w-full py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
