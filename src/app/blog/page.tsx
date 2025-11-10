@@ -173,7 +173,7 @@ export default function BlogIndexPage() {
                 No articles yet
               </h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                We're working on adding great content. Check back soon for technical articles, 
+                We&apos;re working on adding great content. Check back soon for technical articles, 
                 tutorials, and insights on modern development practices.
               </p>
               <div className="bg-slate-50 rounded-lg p-4 text-sm text-slate-600">
