@@ -1,3 +1,10 @@
+---
+title: "Mastering Floyd-Warshall Algorithm: All-Pairs Shortest Paths"
+description: "Learn the Floyd-Warshall algorithm for finding shortest paths between all pairs of vertices in weighted graphs. Complete with Go implementations and practical applications."
+date: "2024-11-11"
+tags: ["algorithms", "graph-algorithms", "floyd-warshall", "all-pairs-shortest-path", "dynamic-programming", "golang"]
+---
+
 # Mastering Floyd-Warshall Algorithm: All-Pairs Shortest Paths
 
 *Published on November 11, 2024 • 42 min read*

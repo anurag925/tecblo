@@ -1,3 +1,10 @@
+---
+title: "Mastering Dijkstra's Algorithm: Single-Source Shortest Paths in Weighted Graphs"
+description: "Learn Dijkstra's algorithm for finding shortest paths in weighted graphs with positive edge weights. Complete with Go implementations and optimization techniques."
+date: "2024-11-10"
+tags: ["algorithms", "graph-algorithms", "dijkstra", "shortest-path", "priority-queue", "golang"]
+---
+
 # Mastering Dijkstra's Algorithm: Single-Source Shortest Paths in Weighted Graphs
 
 *Published on November 10, 2024 • 40 min read*

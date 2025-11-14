@@ -1,3 +1,10 @@
+---
+title: "Mastering Tree Traversal: DFS, BFS, and Morris Traversal Techniques"
+description: "Learn tree traversal algorithms including DFS, BFS, and Morris traversal techniques with Go implementations and space optimization strategies."
+date: "2024-11-10"
+tags: ["data-structures", "trees", "tree-traversal", "dfs", "bfs", "morris-traversal", "golang"]
+---
+
 # Mastering Tree Traversal: DFS, BFS, and Morris Traversal Techniques
 
 *Published on November 10, 2024 • 40 min read*

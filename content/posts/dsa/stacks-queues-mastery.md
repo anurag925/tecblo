@@ -1,3 +1,10 @@
+---
+title: "Mastering Stacks & Queues: LIFO and FIFO Patterns for Problem Solving"
+description: "Learn stack and queue implementations, patterns, and applications including monotonic stacks, priority queues, and problem-solving techniques with Go code."
+date: "2024-11-10"
+tags: ["data-structures", "stacks", "queues", "lifo", "fifo", "monotonic-stack", "golang"]
+---
+
 # Mastering Stacks & Queues: LIFO and FIFO Patterns for Problem Solving
 
 *Published on November 10, 2024 • 30 min read*

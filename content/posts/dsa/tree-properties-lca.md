@@ -1,3 +1,10 @@
+---
+title: "Mastering Tree Properties & LCA: From Diameter to Lowest Common Ancestor"
+description: "Learn tree properties including diameter, balanced trees, symmetric trees, and Lowest Common Ancestor (LCA) algorithms with Go implementations."
+date: "2024-11-10"
+tags: ["data-structures", "trees", "tree-properties", "diameter", "lca", "balanced-trees", "golang"]
+---
+
 # Mastering Tree Properties & LCA: From Diameter to Lowest Common Ancestor
 
 *Published on November 10, 2024 • 38 min read*
