@@ -91,9 +91,8 @@ export default function SystemDesignRoadmapPage() {
         {
           name: "Performance & Latency",
           description: "Optimization techniques, performance monitoring",
-          articles: [],
-          priority: "high",
-          missing: true
+          articles: ["system-design/system-design-performance-latency"],
+          priority: "high"
         },
         {
           name: "CAP Theorem",
@@ -118,9 +117,11 @@ export default function SystemDesignRoadmapPage() {
         {
           name: "SQL vs NoSQL",
           description: "When to use different database types",
-          articles: ["system-design/system-design-column-family-databases"],
-          priority: "high",
-          partial: true
+          articles: [
+            "system-design/system-design-column-family-databases",
+            "system-design/system-design-sql-vs-nosql"
+          ],
+          priority: "high"
         },
         {
           name: "Database Indexing",
@@ -511,17 +512,9 @@ export default function SystemDesignRoadmapPage() {
   // Missing topics that should be added
   const missingTopics = [
     "Database Connection Pool Sizing",
-    "Event-Driven Architecture Patterns",
     "Data Pipeline Design Principles",
-    "Container Orchestration (Kubernetes)",
     "API Design Best Practices",
-    "Performance Testing & Benchmarking",
     "Disaster Recovery & Business Continuity",
-    "Data Privacy & GDPR Compliance",
-    "Machine Learning Infrastructure",
-    "Content Moderation Systems",
-    "Real-time Analytics Systems",
-    "Multi-region Architecture",
     "Database Migration Strategies",
     "Feature Flag Implementation",
     "A/B Testing Infrastructure"
