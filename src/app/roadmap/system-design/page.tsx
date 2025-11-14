@@ -170,6 +170,16 @@ export default function SystemDesignRoadmapPage() {
             "system-design/system-design-saga-pattern"
           ],
           priority: "medium"
+        },
+        {
+          name: "Database Migration Strategies",
+          description: "Zero-downtime migration, data synchronization, validation approaches",
+          articles: [
+            "system-design/system-design-dual-write-pattern",
+            "system-design/system-design-zero-downtime-migrations",
+            "system-design/system-design-database-migration-strategies"
+          ],
+          priority: "medium"
         }
       ]
     },
@@ -510,15 +520,7 @@ export default function SystemDesignRoadmapPage() {
   ]
 
   // Missing topics that should be added
-  const missingTopics = [
-    "Database Connection Pool Sizing",
-    "Data Pipeline Design Principles",
-    "API Design Best Practices",
-    "Disaster Recovery & Business Continuity",
-    "Database Migration Strategies",
-    "Feature Flag Implementation",
-    "A/B Testing Infrastructure"
-  ]
+  const missingTopics = []
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
