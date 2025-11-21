@@ -191,6 +191,9 @@ export default function RootLayout({
                     <Link href="/blog/system-design" className="block text-sm text-slate-600 hover:text-slate-900 transition-colors">
                       System Design
                     </Link>
+                    <Link href="/blog/dsa" className="block text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                      DSA
+                    </Link>
                   </div>
                 </div>
 

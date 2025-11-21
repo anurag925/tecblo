@@ -28,16 +28,26 @@ Imagine a user request that flows through three services: an API Gateway, an Ord
 graph TD
     subgraph Trace
         direction LR
-        A[Span A: API Gateway<br/>(TraceID: 123, SpanID: A, Parent: null)]
-        B[Span B: Order Service<br/>(TraceID: 123, SpanID: B, Parent: A)]
-        C[Span C: User Service<br/>(TraceID: 123, SpanID: C, Parent: B)]
-    
+        A["Span A: API Gateway
+TraceID: 123
+SpanID: A
+Parent: null"]
+        B["Span B: Order Service
+TraceID: 123
+SpanID: B
+Parent: A"]
+        C["Span C: User Service
+TraceID: 123
+SpanID: C
+Parent: B"]
+
         A --> B --> C
     end
 
-    style A fill:#bbf,stroke:#333
-    style B fill:#bfb,stroke:#333
-    style C fill:#fbb,stroke:#333
+    style A fill:#bbf,stroke:#333,font-size:14px,padding:20px
+    style B fill:#bfb,stroke:#333,font-size:14px,padding:20px
+    style C fill:#fbb,stroke:#333,font-size:14px,padding:20px
+
 ```
 
 When visualized in a tracing tool like Jaeger or Zipkin, this would look like a waterfall diagram showing the duration and relationship of each span:

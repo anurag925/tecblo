@@ -1,3 +1,10 @@
+---
+title: "Mastering A* Algorithm: Heuristic-Guided Pathfinding"
+description: "Learn the A* pathfinding algorithm with detailed explanations of heuristic functions, optimizations, and real-world applications. Complete with Go code examples."
+date: "2024-11-11"
+tags: ["algorithms", "graph-algorithms", "pathfinding", "a-star", "heuristics", "golang"]
+---
+
 # Mastering A* Algorithm: Heuristic-Guided Pathfinding
 
 *Published on November 11, 2024 • 45 min read*

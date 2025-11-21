@@ -1,3 +1,10 @@
+---
+title: "Mastering Bellman-Ford Algorithm: Handling Negative Weights and Cycle Detection"
+description: "Learn the Bellman-Ford algorithm for shortest paths with negative edge weights and cycle detection. Complete with Go implementations and real-world applications."
+date: "2024-11-10"
+tags: ["algorithms", "graph-algorithms", "bellman-ford", "shortest-path", "negative-weights", "golang"]
+---
+
 # Mastering Bellman-Ford Algorithm: Handling Negative Weights and Cycle Detection
 
 *Published on November 10, 2024 • 38 min read*

@@ -1,3 +1,10 @@
+---
+title: "Mastering Tree Paths & Construction: From Path Sums to Tree Building"
+description: "Learn tree path algorithms including path sum problems and tree construction from traversals with Go implementations and practical examples."
+date: "2024-11-10"
+tags: ["data-structures", "trees", "tree-paths", "path-sum", "tree-construction", "traversals", "golang"]
+---
+
 # Mastering Tree Paths & Construction: From Path Sums to Tree Building
 
 *Published on November 10, 2024 • 42 min read*

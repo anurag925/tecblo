@@ -1,3 +1,10 @@
+---
+title: "Mastering Binary Search: From Basic Search to Answer Space Exploration"
+description: "Learn binary search techniques from basic implementation to advanced applications like rotated array search and matrix search with Go code examples."
+date: "2024-11-10"
+tags: ["algorithms", "binary-search", "search-algorithms", "rotated-array", "matrix-search", "golang"]
+---
+
 # Mastering Binary Search: From Basic Search to Answer Space Exploration
 
 *Published on November 10, 2024 • 35 min read*

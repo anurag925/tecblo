@@ -1,3 +1,10 @@
+---
+title: "Mastering Topological Sort & Union Find: Dependency Resolution and Disjoint Set Operations"
+description: "Learn topological sort algorithms (Kahn's and DFS-based) and Union-Find data structure for dependency resolution and disjoint set operations with Go implementations."
+date: "2024-11-10"
+tags: ["algorithms", "graph-algorithms", "topological-sort", "union-find", "dependency-resolution", "disjoint-set", "golang"]
+---
+
 # Mastering Topological Sort & Union Find: Dependency Resolution and Disjoint Set Operations
 
 *Published on November 10, 2024 • 48 min read*

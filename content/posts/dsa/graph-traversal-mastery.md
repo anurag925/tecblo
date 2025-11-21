@@ -1,3 +1,10 @@
+---
+title: "Mastering Graph Traversal: BFS, DFS, and Cycle Detection Algorithms"
+description: "Learn graph traversal techniques including BFS and DFS implementations, cycle detection, and practical applications with Go code examples."
+date: "2024-11-10"
+tags: ["algorithms", "graph-algorithms", "bfs", "dfs", "traversal", "cycle-detection", "golang"]
+---
+
 # Mastering Graph Traversal: BFS, DFS, and Cycle Detection Algorithms
 
 *Published on November 10, 2024 • 50 min read*

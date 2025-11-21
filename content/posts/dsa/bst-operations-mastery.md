@@ -1,3 +1,10 @@
+---
+title: "Mastering BST Operations: Validation, Recovery, and Advanced Binary Search Tree Algorithms"
+description: "Learn advanced BST operations including validation, recovery, finding kth elements, and successor/predecessor operations with Go implementations."
+date: "2024-11-10"
+tags: ["data-structures", "trees", "binary-search-tree", "bst-operations", "validation", "golang"]
+---
+
 # Mastering BST Operations: Validation, Recovery, and Advanced Binary Search Tree Algorithms
 
 *Published on November 10, 2024 • 45 min read*

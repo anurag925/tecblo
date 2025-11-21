@@ -1,3 +1,10 @@
+---
+title: "Mastering Linked Lists: From Fast-Slow Pointers to Complex Manipulations"
+description: "Learn advanced linked list techniques including fast-slow pointers, reversal, merging, and manipulation patterns with Go implementations."
+date: "2024-11-10"
+tags: ["data-structures", "linked-lists", "fast-slow-pointers", "reversal", "manipulation", "golang"]
+---
+
 # Mastering Linked Lists: From Fast-Slow Pointers to Complex Manipulations
 
 *Published on November 10, 2024 • 25 min read*
