@@ -79,19 +79,29 @@ export default function SystemDesignRoadmapPage() {
         {
           name: "Scalability",
           description: "Vertical vs horizontal scaling, auto-scaling strategies",
-          articles: ["system-design/system-design-scalability"],
+          articles: [
+            "system-design/system-design-scalability",
+            "system-design/system-design-horizontal-scaling"
+          ],
           priority: "high"
         },
         {
           name: "Reliability & Availability",
           description: "Fault tolerance, redundancy, disaster recovery",
-          articles: ["system-design/system-design-graceful-degradation"],
+          articles: [
+            "system-design/system-design-graceful-degradation",
+            "system-design/system-design-disaster-recovery-planning",
+            "system-design/system-design-automatic-failover-strategies"
+          ],
           priority: "high"
         },
         {
           name: "Performance & Latency",
           description: "Optimization techniques, performance monitoring",
-          articles: ["system-design/system-design-performance-latency"],
+          articles: [
+            "system-design/system-design-performance-latency",
+            "system-design/system-design-performance-testing-benchmarking"
+          ],
           priority: "high"
         },
         {
@@ -99,6 +109,12 @@ export default function SystemDesignRoadmapPage() {
           description: "Consistency, Availability, Partition tolerance trade-offs",
           articles: ["system-design/system-design-cap-theorem"],
           priority: "high"
+        },
+        {
+          name: "Multi-Region Architecture",
+          description: "Geographic distribution, global availability",
+          articles: ["system-design/system-design-multi-region-architecture"],
+          priority: "medium"
         }
       ]
     },
@@ -118,8 +134,11 @@ export default function SystemDesignRoadmapPage() {
           name: "SQL vs NoSQL",
           description: "When to use different database types",
           articles: [
+            "system-design/system-design-sql-vs-nosql",
             "system-design/system-design-column-family-databases",
-            "system-design/system-design-sql-vs-nosql"
+            "system-design/system-design-document-database-patterns",
+            "system-design/system-design-key-value-store-design",
+            "system-design/system-design-graph-database-use-cases"
           ],
           priority: "high"
         },
@@ -128,7 +147,20 @@ export default function SystemDesignRoadmapPage() {
           description: "B-trees, hash indexes, query optimization",
           articles: [
             "system-design/system-design-database-indexing",
-            "system-design/system-design-index-selection-strategies"
+            "system-design/system-design-index-selection-strategies",
+            "system-design/system-design-b-tree-vs-lsm-tree"
+          ],
+          priority: "high"
+        },
+        {
+          name: "Query Optimization",
+          description: "Query execution, join optimization, N+1 problem",
+          articles: [
+            "system-design/system-design-database-query-optimization",
+            "system-design/system-design-query-execution-plans",
+            "system-design/system-design-join-optimization-techniques",
+            "system-design/system-design-n-plus-1-query-problem",
+            "system-design/system-design-materialized-views"
           ],
           priority: "high"
         },
@@ -137,8 +169,10 @@ export default function SystemDesignRoadmapPage() {
           description: "Master-slave, master-master, sync vs async",
           articles: [
             "system-design/system-design-replication",
+            "system-design/system-design-master-slave-replication",
+            "system-design/system-design-multi-master-replication",
             "system-design/system-design-read-replicas-and-write-masters",
-            "system-design/system-design-multi-master-replication"
+            "system-design/system-design-sync-vs-async-replication"
           ],
           priority: "high"
         },
@@ -148,17 +182,21 @@ export default function SystemDesignRoadmapPage() {
           articles: [
             "system-design/system-design-sharding",
             "system-design/system-design-hash-based-partitioning",
-            "system-design/system-design-range-based-partitioning"
+            "system-design/system-design-range-based-partitioning",
+            "system-design/system-design-horizontal-vs-vertical-partitioning",
+            "system-design/system-design-database-federation"
           ],
           priority: "high"
         },
         {
           name: "Consistency Models",
-          description: "Strong, eventual, causal consistency",
+          description: "Strong, eventual, causal, session consistency",
           articles: [
             "system-design/system-design-consistency-models",
             "system-design/system-design-strong-consistency-models",
-            "system-design/system-design-causal-consistency"
+            "system-design/system-design-causal-consistency",
+            "system-design/system-design-session-consistency",
+            "system-design/system-design-eventual-consistency-patterns"
           ],
           priority: "medium"
         },
@@ -166,6 +204,7 @@ export default function SystemDesignRoadmapPage() {
           name: "Distributed Transactions",
           description: "ACID properties, 2PC, Saga pattern",
           articles: [
+            "system-design/system-design-distributed-transactions",
             "system-design/system-design-2pc",
             "system-design/system-design-saga-pattern"
           ],
@@ -173,11 +212,43 @@ export default function SystemDesignRoadmapPage() {
         },
         {
           name: "Database Migration Strategies",
-          description: "Zero-downtime migration, data synchronization, validation approaches",
+          description: "Zero-downtime migration, data synchronization",
           articles: [
-            "system-design/system-design-dual-write-pattern",
+            "system-design/system-design-database-migration-strategies",
             "system-design/system-design-zero-downtime-migrations",
-            "system-design/system-design-database-migration-strategies"
+            "system-design/system-design-dual-write-pattern",
+            "system-design/system-design-data-reconciliation"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Storage Systems",
+          description: "Object storage, file systems, blob storage patterns",
+          articles: [
+            "system-design/system-design-object-storage-design",
+            "system-design/system-design-blob-storage-patterns",
+            "system-design/system-design-block-vs-file-storage",
+            "system-design/system-design-distributed-file-systems"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Storage Patterns",
+          description: "Write-ahead logging, log-structured storage",
+          articles: [
+            "system-design/system-design-write-ahead-logging-wal",
+            "system-design/system-design-log-structured-storage",
+            "system-design/system-design-copy-on-write-cow-pattern"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Connection Management",
+          description: "Connection pooling, proxy patterns, sizing",
+          articles: [
+            "system-design/system-design-connection-pooling",
+            "system-design/system-design-connection-pool-sizing",
+            "system-design/system-design-database-proxy-patterns"
           ],
           priority: "medium"
         }
@@ -194,6 +265,7 @@ export default function SystemDesignRoadmapPage() {
           description: "Cache-aside, write-through, write-back patterns",
           articles: [
             "system-design/system-design-caching",
+            "system-design/system-design-caching-strategies",
             "system-design/system-design-read-through-cache",
             "system-design/system-design-write-through-cache",
             "system-design/system-design-write-back-cache"
@@ -218,7 +290,10 @@ export default function SystemDesignRoadmapPage() {
         {
           name: "Distributed Caching",
           description: "Redis, Memcached, consistent hashing",
-          articles: ["system-design/system-design-consistent-hashing"],
+          articles: [
+            "system-design/system-design-consistent-hashing-deep-dive",
+            "system-design/system-design-consistent-hashing-in-load-balancing"
+          ],
           priority: "medium"
         }
       ]
@@ -234,7 +309,8 @@ export default function SystemDesignRoadmapPage() {
           description: "Round-robin, weighted, least connections",
           articles: [
             "system-design/system-design-load-balancing",
-            "system-design/system-design-load-balancing-algorithms"
+            "system-design/system-design-load-balancing-algorithms",
+            "system-design/system-design-maglev-load-balancer"
           ],
           priority: "high"
         },
@@ -244,7 +320,18 @@ export default function SystemDesignRoadmapPage() {
           articles: [
             "system-design/system-design-dns-load-balancing",
             "system-design/system-design-anycast-for-load-balancing",
+            "system-design/system-design-anycast-routing",
             "system-design/system-design-global-server-load-balancing-gslb"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Traffic Management",
+          description: "Traffic shaping, backpressure handling",
+          articles: [
+            "system-design/system-design-traffic-shaping-patterns",
+            "system-design/system-design-backpressure",
+            "system-design/system-design-traffic-management-with-istio"
           ],
           priority: "medium"
         },
@@ -264,6 +351,46 @@ export default function SystemDesignRoadmapPage() {
     },
     {
       id: 5,
+      title: "API Design & Protocols",
+      description: "Building robust and scalable APIs",
+      color: "from-cyan-500 to-cyan-600",
+      topics: [
+        {
+          name: "API Design Principles",
+          description: "RESTful design, versioning, pagination",
+          articles: [
+            "system-design/system-design-api-design",
+            "system-design/system-design-api-versioning-strategies",
+            "system-design/system-design-pagination-techniques",
+            "system-design/system-design-filtering-and-sorting-apis"
+          ],
+          priority: "high"
+        },
+        {
+          name: "API Operations",
+          description: "Idempotency, batch operations, secure design",
+          articles: [
+            "system-design/system-design-idempotent-api-design",
+            "system-design/system-design-batch-api-operations",
+            "system-design/system-design-secure-api-design",
+            "system-design/system-design-api-key-management"
+          ],
+          priority: "high"
+        },
+        {
+          name: "Modern Protocols",
+          description: "GraphQL, gRPC, HTTP/2, HTTP/3",
+          articles: [
+            "system-design/system-design-graphql",
+            "system-design/system-design-grpc-protobuf",
+            "system-design/system-design-http2-vs-http3"
+          ],
+          priority: "medium"
+        }
+      ]
+    },
+    {
+      id: 6,
       title: "Messaging & Communication",
       description: "Asynchronous communication and event-driven architectures",
       color: "from-red-500 to-red-600",
@@ -273,7 +400,9 @@ export default function SystemDesignRoadmapPage() {
           description: "RabbitMQ, Amazon SQS, reliability patterns",
           articles: [
             "system-design/system-design-message-queues",
-            "system-design/system-design-message-queue-reliability-patterns"
+            "system-design/system-design-message-queue-reliability-patterns",
+            "system-design/system-design-dead-letter-queues",
+            "system-design/system-design-message-ordering-guarantees"
           ],
           priority: "high"
         },
@@ -283,6 +412,7 @@ export default function SystemDesignRoadmapPage() {
           articles: [
             "system-design/system-design-apache-kafka-architecture",
             "system-design/system-design-event-sourcing",
+            "system-design/system-design-event-streaming-patterns",
             "system-design/system-design-cqrs"
           ],
           priority: "high"
@@ -292,25 +422,36 @@ export default function SystemDesignRoadmapPage() {
           description: "WebSockets, Server-Sent Events, long polling",
           articles: [
             "system-design/system-design-websockets",
+            "system-design/system-design-websocket-protocol-deep-dive",
             "system-design/system-design-server-sent-events-sse",
-            "system-design/system-design-long-polling-vs-streaming"
+            "system-design/system-design-long-polling-vs-streaming",
+            "system-design/system-design-real-time-messaging"
           ],
           priority: "medium"
         },
         {
-          name: "Service Communication",
-          description: "REST, GraphQL, gRPC, service mesh",
+          name: "Notification Systems",
+          description: "Push notifications, presence detection",
           articles: [
-            "system-design/system-design-grpc-protobuf",
-            "system-design/system-design-graphql",
-            "system-design/system-design-service-mesh-architecture"
+            "system-design/system-design-notification-systems",
+            "system-design/system-design-push-notification-systems",
+            "system-design/system-design-presence-detection"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Async Patterns",
+          description: "Async/await, competing consumers, backpressure",
+          articles: [
+            "system-design/system-design-async-await-patterns",
+            "system-design/system-design-competing-consumers-pattern"
           ],
           priority: "medium"
         }
       ]
     },
     {
-      id: 6,
+      id: 7,
       title: "Microservices & Architecture Patterns",
       description: "Distributed system architecture and design patterns",
       color: "from-indigo-500 to-indigo-600",
@@ -318,7 +459,10 @@ export default function SystemDesignRoadmapPage() {
         {
           name: "Microservices Architecture",
           description: "Service decomposition, bounded contexts",
-          articles: ["system-design/system-design-microservices"],
+          articles: [
+            "system-design/system-design-microservices",
+            "system-design/system-design-cloud-native-architecture"
+          ],
           priority: "high"
         },
         {
@@ -328,27 +472,75 @@ export default function SystemDesignRoadmapPage() {
           priority: "medium"
         },
         {
-          name: "Circuit Breaker Pattern",
-          description: "Failure handling, fault isolation, resilience",
-          articles: ["system-design/system-design-circuit-breaker"],
-          priority: "high"
-        },
-        {
-          name: "Bulkhead Pattern",
-          description: "Resource isolation, failure compartmentalization",
-          articles: ["system-design/system-design-bulkhead-pattern"],
+          name: "Service Mesh",
+          description: "Sidecar proxy, Istio, traffic management",
+          articles: [
+            "system-design/system-design-service-mesh-architecture",
+            "system-design/system-design-sidecar-proxy-pattern"
+          ],
           priority: "medium"
         },
         {
-          name: "Retry & Backoff",
-          description: "Exponential backoff, jitter, circuit breaking",
-          articles: ["system-design/system-design-retry-mechanisms"],
+          name: "Resilience Patterns",
+          description: "Circuit breaker, bulkhead, retry mechanisms",
+          articles: [
+            "system-design/system-design-circuit-breaker",
+            "system-design/system-design-bulkhead-pattern",
+            "system-design/system-design-retry-mechanisms"
+          ],
+          priority: "high"
+        },
+        {
+          name: "Migration Patterns",
+          description: "Strangler fig, feature toggles",
+          articles: [
+            "system-design/system-design-strangler-fig-pattern",
+            "system-design/system-design-feature-toggle-patterns"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Advanced Patterns",
+          description: "Actor model, state machines, event-driven",
+          articles: [
+            "system-design/system-design-actor-model-pattern",
+            "system-design/system-design-state-machine-patterns"
+          ],
+          priority: "low"
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: "Containers & Orchestration",
+      description: "Container technologies and deployment strategies",
+      color: "from-sky-500 to-sky-600",
+      topics: [
+        {
+          name: "Container Fundamentals",
+          description: "Docker basics, containerization concepts",
+          articles: ["system-design/system-design-docker-fundamentals"],
+          priority: "high"
+        },
+        {
+          name: "Container Orchestration",
+          description: "Kubernetes, service management",
+          articles: ["system-design/system-design-container-orchestration-kubernetes"],
+          priority: "high"
+        },
+        {
+          name: "Deployment Strategies",
+          description: "Blue-green, canary, rolling deployments",
+          articles: [
+            "system-design/system-design-blue-green-deployments",
+            "system-design/system-design-canary-deployments"
+          ],
           priority: "medium"
         }
       ]
     },
     {
-      id: 7,
+      id: 9,
       title: "Security & Authentication",
       description: "Securing systems and managing user access",
       color: "from-pink-500 to-pink-600",
@@ -368,7 +560,9 @@ export default function SystemDesignRoadmapPage() {
           description: "RBAC, ABAC, permission inheritance",
           articles: [
             "system-design/system-design-role-based-access-control-rbac",
-            "system-design/system-design-attribute-based-access-control-abac"
+            "system-design/system-design-attribute-based-access-control-abac",
+            "system-design/system-design-permission-inheritance",
+            "system-design/system-design-policy-based-authorization"
           ],
           priority: "medium"
         },
@@ -379,9 +573,13 @@ export default function SystemDesignRoadmapPage() {
           priority: "high"
         },
         {
-          name: "Cryptography",
-          description: "Hashing, encryption, digital signatures",
-          articles: ["system-design/system-design-cryptography-in-system-design"],
+          name: "Cryptography & TLS",
+          description: "Hashing, encryption, mTLS",
+          articles: [
+            "system-design/system-design-cryptography-in-system-design",
+            "system-design/system-design-transport-layer-security-tls",
+            "system-design/system-design-mtls-implementation"
+          ],
           priority: "medium"
         },
         {
@@ -389,11 +587,57 @@ export default function SystemDesignRoadmapPage() {
           description: "TOTP, SMS, biometric authentication",
           articles: ["system-design/system-design-multi-factor-authentication"],
           priority: "medium"
+        },
+        {
+          name: "Data Privacy",
+          description: "GDPR compliance, data protection",
+          articles: ["system-design/system-design-data-privacy-gdpr-compliance"],
+          priority: "medium"
         }
       ]
     },
     {
-      id: 8,
+      id: 10,
+      title: "Distributed Locking & Concurrency",
+      description: "Managing concurrent access in distributed systems",
+      color: "from-amber-500 to-amber-600",
+      topics: [
+        {
+          name: "Distributed Locks",
+          description: "Lock implementations, Redlock algorithm",
+          articles: [
+            "system-design/system-design-distributed-lock-implementations",
+            "system-design/system-design-redlock-algorithm",
+            "system-design/system-design-lease-based-locking"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Locking Strategies",
+          description: "Pessimistic vs optimistic locking",
+          articles: ["system-design/system-design-pessimistic-vs-optimistic-locking"],
+          priority: "medium"
+        },
+        {
+          name: "Concurrency Patterns",
+          description: "Lock-free data structures, thread pools",
+          articles: [
+            "system-design/system-design-lock-free-data-structures",
+            "system-design/system-design-thread-pool-design",
+            "system-design/system-design-memory-management-patterns"
+          ],
+          priority: "low"
+        },
+        {
+          name: "Conflict Resolution",
+          description: "Resolving conflicts in distributed systems",
+          articles: ["system-design/system-design-conflict-resolution"],
+          priority: "medium"
+        }
+      ]
+    },
+    {
+      id: 11,
       title: "Search & Information Retrieval",
       description: "Building powerful search and recommendation systems",
       color: "from-teal-500 to-teal-600",
@@ -409,6 +653,15 @@ export default function SystemDesignRoadmapPage() {
           priority: "medium"
         },
         {
+          name: "Search Features",
+          description: "Faceted search, personalized search",
+          articles: [
+            "system-design/system-design-faceted-search-patterns",
+            "system-design/system-design-personalized-search"
+          ],
+          priority: "medium"
+        },
+        {
           name: "Type-ahead & Autocomplete",
           description: "Trie data structures, caching, performance",
           articles: [
@@ -419,10 +672,11 @@ export default function SystemDesignRoadmapPage() {
         },
         {
           name: "Recommendation Systems",
-          description: "Collaborative filtering, content-based, real-time",
+          description: "Collaborative filtering, content-based, hybrid",
           articles: [
             "system-design/system-design-collaborative-filtering",
             "system-design/system-design-content-based-filtering",
+            "system-design/system-design-hybrid-recommendation-systems",
             "system-design/system-design-real-time-recommendations"
           ],
           priority: "low"
@@ -436,7 +690,7 @@ export default function SystemDesignRoadmapPage() {
       ]
     },
     {
-      id: 9,
+      id: 12,
       title: "Monitoring & Observability",
       description: "Understanding system behavior and performance",
       color: "from-gray-500 to-gray-600",
@@ -475,26 +729,184 @@ export default function SystemDesignRoadmapPage() {
       ]
     },
     {
-      id: 10,
+      id: 13,
+      title: "Media & Streaming",
+      description: "Video, live streaming, and media processing systems",
+      color: "from-rose-500 to-rose-600",
+      topics: [
+        {
+          name: "Video Streaming",
+          description: "Video architecture, adaptive bitrate streaming",
+          articles: [
+            "system-design/system-design-video-streaming-architecture",
+            "system-design/system-design-adaptive-bitrate-streaming"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Live Streaming",
+          description: "Real-time video, live updates",
+          articles: [
+            "system-design/system-design-live-streaming-systems",
+            "system-design/system-design-live-updates-architecture"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Media Processing",
+          description: "Transcoding pipelines, media workflows",
+          articles: ["system-design/system-design-media-transcoding-pipelines"],
+          priority: "low"
+        }
+      ]
+    },
+    {
+      id: 14,
+      title: "Data Processing & Analytics",
+      description: "Batch processing, stream processing, and analytics",
+      color: "from-emerald-500 to-emerald-600",
+      topics: [
+        {
+          name: "Data Pipelines",
+          description: "ETL, ELT, data pipeline design",
+          articles: [
+            "system-design/system-design-data-pipeline-design",
+            "system-design/system-design-etl-vs-elt"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Stream Processing",
+          description: "Real-time data processing, Apache Storm/Flink",
+          articles: [
+            "system-design/system-design-stream-processing-fundamentals",
+            "system-design/system-design-real-time-data-processing"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Batch Processing",
+          description: "MapReduce, batch job scheduling",
+          articles: [
+            "system-design/system-design-mapreduce-pattern",
+            "system-design/system-design-batch-job-scheduling"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Real-time Analytics",
+          description: "Real-time analytics, A/B testing infrastructure",
+          articles: [
+            "system-design/system-design-real-time-analytics-systems",
+            "system-design/system-design-ab-testing-infrastructure"
+          ],
+          priority: "medium"
+        }
+      ]
+    },
+    {
+      id: 15,
+      title: "Job & Workflow Management",
+      description: "Task scheduling, workflow engines, and job processing",
+      color: "from-fuchsia-500 to-fuchsia-600",
+      topics: [
+        {
+          name: "Task Scheduling",
+          description: "Job queues, task scheduling systems",
+          articles: [
+            "system-design/system-design-task-scheduling-systems",
+            "system-design/system-design-job-queue-management"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Workflow Engines",
+          description: "Workflow orchestration, order processing",
+          articles: [
+            "system-design/system-design-workflow-engine-design",
+            "system-design/system-design-order-processing-workflows"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Data Deduplication",
+          description: "Deduplication strategies, idempotency",
+          articles: ["system-design/system-design-deduplication-strategies"],
+          priority: "medium"
+        }
+      ]
+    },
+    {
+      id: 16,
+      title: "Social & Real-time Features",
+      description: "Social graphs, feeds, and activity systems",
+      color: "from-blue-500 to-indigo-600",
+      topics: [
+        {
+          name: "News Feed Systems",
+          description: "Feed generation, ranking, delivery",
+          articles: [
+            "system-design/system-design-news-feed-architecture",
+            "system-design/system-design-activity-streams"
+          ],
+          priority: "medium"
+        },
+        {
+          name: "Social Graphs",
+          description: "Friend graphs, relationship modeling",
+          articles: ["system-design/system-design-friend-graph-design"],
+          priority: "medium"
+        },
+        {
+          name: "Content Moderation",
+          description: "Content filtering, moderation systems",
+          articles: ["system-design/system-design-content-moderation-systems"],
+          priority: "low"
+        }
+      ]
+    },
+    {
+      id: 17,
+      title: "E-Commerce Systems",
+      description: "Shopping carts, inventory, and payment systems",
+      color: "from-yellow-500 to-orange-600",
+      topics: [
+        {
+          name: "Shopping Cart",
+          description: "Cart design, session management",
+          articles: ["system-design/system-design-shopping-cart-design"],
+          priority: "medium"
+        },
+        {
+          name: "Inventory Management",
+          description: "Inventory tracking, stock management",
+          articles: ["system-design/system-design-inventory-management-systems"],
+          priority: "medium"
+        },
+        {
+          name: "Payment Systems",
+          description: "Payment gateway integration, transactions",
+          articles: ["system-design/system-design-payment-gateway-integration"],
+          priority: "medium"
+        }
+      ]
+    },
+    {
+      id: 18,
       title: "Advanced Topics",
       description: "Specialized patterns and emerging technologies",
       color: "from-violet-500 to-violet-600",
       topics: [
         {
           name: "Consensus Algorithms",
-          description: "Raft, Paxos, leader election",
+          description: "Raft, Paxos, Zab, leader election",
           articles: [
             "system-design/system-design-raft-consensus",
             "system-design/system-design-paxos-algorithm",
-            "system-design/system-design-leader-election"
+            "system-design/system-design-leader-election",
+            "system-design/system-design-zookeeper-zab"
           ],
           priority: "low"
-        },
-        {
-          name: "Stream Processing",
-          description: "Real-time data processing, Apache Storm/Flink",
-          articles: ["system-design/system-design-stream-processing-fundamentals"],
-          priority: "medium"
         },
         {
           name: "Time-Series Data",
@@ -502,6 +914,7 @@ export default function SystemDesignRoadmapPage() {
           articles: [
             "system-design/system-design-time-series-database-design",
             "system-design/system-design-time-series-compression",
+            "system-design/system-design-downsampling-strategies",
             "system-design/system-design-data-retention-policies"
           ],
           priority: "low"
@@ -514,13 +927,25 @@ export default function SystemDesignRoadmapPage() {
             "system-design/system-design-function-as-a-service-faas"
           ],
           priority: "low"
+        },
+        {
+          name: "Multi-tenancy",
+          description: "Multi-tenant architecture patterns",
+          articles: ["system-design/system-design-multi-tenancy-strategies"],
+          priority: "medium"
+        },
+        {
+          name: "Machine Learning Infrastructure",
+          description: "ML systems, model serving",
+          articles: ["system-design/system-design-machine-learning-infrastructure"],
+          priority: "low"
         }
       ]
     }
   ]
 
   // Missing topics that should be added
-  const missingTopics = []
+  const missingTopics: any[] = []
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {

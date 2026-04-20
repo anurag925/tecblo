@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </header>
             
             <div className="px-8 py-12">
-              <div 
+              <div
                 className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-700 prose-p:leading-relaxed prose-strong:text-slate-900 prose-code:text-indigo-600 prose-code:font-semibold prose-pre:bg-slate-900 prose-pre:border-0"
                 dangerouslySetInnerHTML={{ __html: processedContent }}
               />

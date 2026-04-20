@@ -44,9 +44,6 @@ export default function CollapsibleSection({ title, children }: CollapsibleSecti
               <h2 className="text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
                 {formatTitle(categoryName)}
               </h2>
-              <p className="text-sm text-slate-500 mt-1">
-                {count} article{count !== '1' ? 's' : ''} • Click to {isOpen ? 'collapse' : 'expand'}
-              </p>
             </div>
           </div>
           
