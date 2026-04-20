@@ -1,0 +1,19 @@
+[providers]
+# Node.js runtime with appropriate version
+node = "20"
+
+[phases.setup]
+# Install dependencies
+nixpacks = "nodejs_20"
+
+[phases.build]
+# Build the Next.js application
+build = ["npm", "run", "build"]
+
+[phases.start]
+# Start the Next.js production server
+start = ["npm", "run", "start"]
+
+[start]
+# Port to listen on (Nixpacks sets PORT env variable)
+port = 3000
